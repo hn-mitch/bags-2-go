@@ -1,0 +1,35 @@
+<div class="container mx-auto p-10 lg:p-20">
+  <div class="h-screen">
+    <div class="text-center">
+      <h1 class="font-bold text-9xl lg:text-[100px] text-gray-900">{{ section.settings.title }}</h1>
+      <h3 class="text-xl lg:text-xl">
+        {{ section.settings.subtitle }}
+      </h3>
+      <div class="my-4">
+        <a href="{{ shop.url }}" class="overflow-hidden w-full text-center px-7 py-3 uppercase bg-gray-900 text-white font-bold text-sm leading-snug ">
+          Go Back to Homepage
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Template 404",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "default": "404",
+        "label": "404 Heading Title"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "default": "Page not found",
+        "label": "404 Subtitle"
+      }
+    ]
+  }
+{% endschema %}
