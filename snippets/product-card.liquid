@@ -1,0 +1,35 @@
+<div class="w-full py-6 px-3">
+  <div class="border bg-white shadow-lg rounded-lg overflow-hidden">
+    <a href="{{ product_card.url }}">
+      {% if product_card.featured_image %}
+        <div class="h-80 overflow-hidden">
+          <img
+            class="w-full h-full object-fit transition duration-1000 ease-in-out hover:scale-105 transform"
+            src="{{ product_card.featured_image | img_url}}"
+            alt="{{ product_card.featured_image.alt }}"
+            width=""
+            height=""
+            loading="lazy">
+        </div>
+
+      {% else %}
+        <img
+          class="w-full h-full object-fit transition duration-1000 ease-in-out hover:scale-105 transform"
+          src="{{ 'no_image.png' | file_url }}"
+          alt="no image"
+          width=""
+          height=""
+          loading="lazy">
+      {% endif %}
+    </a>
+
+    <div class="flex flex-col p-4">
+      <span class="text-sm text-gray-400">{{ product_card.vendor }}</span>
+
+      <a href="{{ product_card.url }}" class="text-gray-700 uppercase font-medium">{{ product_card.title }}</a>
+
+      <p class="text-gray-500">{{ product_card.price | money }}</p>
+    </div>
+
+  </div>
+</div>

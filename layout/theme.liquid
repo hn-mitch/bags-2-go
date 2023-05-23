@@ -9,14 +9,7 @@
       <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
       {{content_for_header}}
       {{ 'theme.css' | asset_url | stylesheet_tag }}
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+       
   
         <script
           type="text/javascript"
@@ -26,17 +19,14 @@
           type="text/javascript"
           src="//code.jquery.com/jquery-migrate-1.2.1.min.js"
           defer="defer"></script>
-        <script
-          type="text/javascript"
-          src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-          defer="defer"></script>
+    
         <script
           defer
           src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
           defer="defer"></script>
-        {% comment %} <script src="{{ 'global-slider.js' | asset_url }}" defer></script>
+
         <script src="{{ 'variant-selector.js' | asset_url }}" defer></script>
-        <script src="{{ 'add-to-cart.js' | asset_url }}" defer></script> {% endcomment %}
+        <script src="{{ 'cart-notification.js' | asset_url }}" defer></script>
         <style>[x-cloak] {
             display: none !important;
           }
@@ -45,7 +35,6 @@
       <body>
         {% section 'header' %}
         <main role="main">
-          {% comment %} {% render 'cart-notification' %} {% endcomment %}
           {{ content_for_layout }}
           {% comment %} {% section 'footer' %} {% endcomment %}
         </main>

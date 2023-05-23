@@ -34,12 +34,18 @@
                         height="auto"
                         loading="lazy">
                     {% else %}
-                      {{ 'product-1' | placeholder_svg_tag: 'w-20 h-20 object-cover border' }}
+                      <img
+                        src="{{ 'no_image.png' | file_url: 'large' }}"
+                        alt=""
+                        class="w-24 h-24 object-cover border"
+                        width="auto"
+                        height="auto"
+                        loading="lazy">
                     {% endif %}
                   </a>
                 </td>
                 <td class="py-4 px-2 flex flex-col justify-center">
-                  <a href="{{ item.url }}" class="my-1">{{ item.product.title | truncatewords: 5 }}</a>
+                  <a href="{{ item.url }}" class="my-1">{{ item.product.title }}</a>
                   <span class="text-sm text-gray-500 my-1">{{ item.variant.title }}</span>
 
                 </td>
