@@ -1,10 +1,23 @@
 {
-    "sections": {
-        "template-list-collections": {
-            "type": "template-list-collections"
-        }
+  "sections": {
+    "e68a0700-2800-4788-b95f-e337b9b4371a": {
+      "type": "hero-banner",
+      "settings": {
+        "title": "Got ya Stuff?",
+        "subtitle": "It’s all about you and style",
+        "button_label": "Shop now",
+        "button_link": ""
+      }
     },
-    "order": [
-        "template-list-collections"
-    ]
+    "template-list-collections": {
+      "type": "template-list-collections",
+      "settings": {
+        "title": "Collections"
+      }
+    }
+  },
+  "order": [
+    "e68a0700-2800-4788-b95f-e337b9b4371a",
+    "template-list-collections"
+  ]
 }
