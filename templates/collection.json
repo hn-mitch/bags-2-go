@@ -1,10 +1,23 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-collection"
-        }
+  "sections": {
+    "84719f62-8b95-434a-a960-78160797cbf4": {
+      "type": "hero-banner",
+      "settings": {
+        "title": "Got ya Stuff?",
+        "subtitle": "It’s all about you and style",
+        "button_label": "Shop now",
+        "button_link": ""
+      }
     },
-    "order": [
-        "template"
-    ]
+    "template": {
+      "type": "template-collection",
+      "settings": {
+        "number_of_products_per_page": 6
+      }
+    }
+  },
+  "order": [
+    "84719f62-8b95-434a-a960-78160797cbf4",
+    "template"
+  ]
 }

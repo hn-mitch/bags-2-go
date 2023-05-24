@@ -1,26 +1,44 @@
 {
-    "sections": {
-        "template": {
-            "type": "template-cart",
-            "blocks": {
-                "subtotal": {
-                    "type": "subtotal"
-                },
-                "update-button": {
-                    "type": "update_button"
-                },
-                "checkout-button": {
-                    "type": "checkout_button"
-                }
-            },
-            "block_order": [
-                "subtotal",
-                "update-button",
-                "checkout-button"
-            ]
-        }
+  "sections": {
+    "feaa8cf4-66b2-44b8-b45b-28fecdc0f184": {
+      "type": "hero-banner",
+      "settings": {
+        "title": "Got ya Stuff?",
+        "subtitle": "It’s all about you and style",
+        "button_label": "Shop now",
+        "button_link": ""
+      }
     },
-    "order": [
-        "template"
-    ]
+    "template": {
+      "type": "template-cart",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {
+          }
+        },
+        "update-button": {
+          "type": "update_button",
+          "settings": {
+          }
+        },
+        "checkout-button": {
+          "type": "checkout_button",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "update-button",
+        "checkout-button"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "feaa8cf4-66b2-44b8-b45b-28fecdc0f184",
+    "template"
+  ]
 }
