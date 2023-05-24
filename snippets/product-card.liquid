@@ -5,7 +5,7 @@
         <div class="h-80 overflow-hidden">
           <img
             class="w-full h-full object-fit transition duration-1000 ease-in-out hover:scale-105 transform"
-            src="{{ product_card.featured_image | img_url}}"
+            src="{{ product_card.featured_image | img_url: 'large'}}"
             alt="{{ product_card.featured_image.alt }}"
             width=""
             height=""

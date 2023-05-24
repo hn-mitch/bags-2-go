@@ -6,7 +6,7 @@
       <div class="md:block">
         <div class="h-100 overflow-hidden p-2">
           <img
-            src="https://cdn.shopify.com/s/files/1/0757/7482/0669/products/image_2023-05-08_111820716.png?v=1683515"
+            src="{{ product.featured_media | img_url: 'large'}}"
             alt=""
             class="w-full h-full object-cover featured-image"
             width=""
@@ -16,11 +16,29 @@
         </div>
       </div>
       <div class="md:block">
-        {% for media in product.media %}
-          <div class="h-100 overflow-hidden p-2">
-            {% render 'product-media', media: media %}
+        <!-- Swiper -->
+        <div class="swiper-wrapper">
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  {% for media in product.media %}
+                    <div class="swiper-slide media-{{ forloop.index0 }}">
+                      {% render 'product-media', media: media %}
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-prev slider-button hn-slider-button slider-button--prev">
+              <div class="swiper-caret"></div>
+            </div>
+            <div class="swiper-button-next slider-button hn-slider-button slider-button--next">
+              <div class="swiper-caret"></div>
+            </div>
           </div>
-        {% endfor %}
+        </div>
+
       </div>
     </div>
 
@@ -53,7 +71,7 @@
             {% when 'variant_selector' %}
             <div class="my-3">
               {% unless product.has_only_default_variant %}
-                <variant-selector data-url="{{ product.url}}" data-section="{{ section.id }}">
+                <variant-selector data-url="{{ product.url }}" data-section="{{ section.id }}">
                   {% for option in product.options_with_values %}
                     <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
@@ -130,6 +148,40 @@
     </div>
   </div>
 </div>
+
+<script>
+  window.addEventListener('load', function() {
+    var swiper = new Swiper('.swiper', {
+      slidesPerView: 3,
+      direction: getDirection(),
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      on: {
+        resize: function() {
+          swiper.changeDirection(getDirection());
+        },
+        click: function(e) {
+          console.log(e.clickedIndex);
+          const imgIndex = e.clickedIndex;
+          const imgSrc = document.querySelector('.media-' + imgIndex + ' > img').getAttribute('src');
+          document.querySelector('.featured-image').src = imgSrc;
+        }
+      }
+    });
+
+    function getDirection() {
+      var windowWidth = window.innerWidth;
+      var direction = window.innerWidth <= 760
+        ? 'vertical'
+        : 'horizontal';
+
+      return direction;
+    }
+  });
+</script>
+
 
 {% schema %}
   {
