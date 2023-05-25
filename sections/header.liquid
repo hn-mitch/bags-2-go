@@ -17,7 +17,9 @@
 
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex justify-start lg:flex-1 truncate">
-        <h1 class="text-xl font-bold truncate">{{ section.settings.menu_title }}</h1>
+        <a href="{{ shop.url }}">
+          <h1 class="text-xl font-bold truncate">{{ section.settings.menu_title }}</h1>
+        </a>
       </div>
 
 
@@ -127,7 +129,9 @@
         <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
         <div class="flex items-center justify-between pb-3">
           <div>
-            <h1 class="text-lg text-gray-500">{{ section.settings.menu_title }}</h1>
+            <a href="{{ shop.url }}">
+              <h1 class="text-lg text-gray-500">{{ section.settings.menu_title }}</h1>
+            </a>
           </div>
           <div class="-mr-2">
             <button
