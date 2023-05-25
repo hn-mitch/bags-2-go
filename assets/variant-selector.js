@@ -42,9 +42,6 @@ class VariantSelector extends HTMLElement {
     updateURL() {
       if (!this.currentVariant) 
         return;
-      
-
-
       window.history.replaceState({}, '', `${
         this.dataset.url
       }?variant=${

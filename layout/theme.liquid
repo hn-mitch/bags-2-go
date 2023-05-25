@@ -10,7 +10,7 @@
     {{ content_for_header }}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css">
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css"> {% endcomment %}
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
@@ -30,7 +30,7 @@
       defer></script>
     <script
       type="text/javascript"
-      src="{{ 'cart-notification.js' | asset_url }}"
+      src="{{ 'add-to-cart-notification.js' | asset_url }}"
       defer></script>
     <script
       type="text/javascript"
@@ -39,6 +39,10 @@
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"
+      defer></script>
+    <script
+      type="text/javascript"
+      src="{{ 'slider.js' | asset_url }}"
       defer></script>
     <style>
       [x-cloak] {
@@ -51,7 +55,7 @@
     <main role="main">
       {% render 'cart-notification' %}
       {{ content_for_layout }}
-      {% comment %} {% section 'footer' %} {% endcomment %}
+      {% section 'footer' %}
     </main>
   </body>
 </html>

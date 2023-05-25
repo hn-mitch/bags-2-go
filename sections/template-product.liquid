@@ -6,7 +6,7 @@
       <div class="md:block">
         <div class="h-100 overflow-hidden p-2">
           <img
-            src="{{ product.featured_media | img_url: 'large'}}"
+            src="{{ product.featured_media | img_url: 'medium'}}"
             alt=""
             class="w-full h-full object-cover featured-image"
             width=""
@@ -117,18 +117,9 @@
             </div>
 
             {% when 'checkout_buttons' %}
+            test
             <div class="my-3">
-              <button
-                type="submit"
-                name="add"
-                class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
-                {% if selected_variant.available == false %}disabled{% endif %}>
-                {% if selected_variant.available == false %}
-                  Sold out
-                {% else %}
-                  Add to cart
-                {% endif %}
-              </button>
+              {% render 'add-to-cart-button', selected_variant: selected_variant %}
             </div>
           {% else %}
         {% else %}
@@ -139,39 +130,6 @@
     </div>
   </div>
 </div>
-
-<script>
-  window.addEventListener('load', function() {
-    var swiper = new Swiper('.swiper', {
-      slidesPerView: 3,
-      direction: getDirection(),
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      on: {
-        resize: function() {
-          swiper.changeDirection(getDirection());
-        },
-        click: function(e) {
-          console.log(e.clickedIndex);
-          const imgIndex = e.clickedIndex;
-          const imgSrc = document.querySelector('.media-' + imgIndex + ' > img').getAttribute('src');
-          document.querySelector('.featured-image').src = imgSrc;
-        }
-      }
-    });
-
-    function getDirection() {
-      var windowWidth = window.innerWidth;
-      var direction = window.innerWidth <= 760
-        ? 'vertical'
-        : 'horizontal';
-
-      return direction;
-    }
-  });
-</script>
 
 
 {% schema %}

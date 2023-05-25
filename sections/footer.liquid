@@ -1,0 +1,41 @@
+<footer class="bg-gray-900 text-white">
+  <div class="container mx-auto p-10 lg:p-20">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <div class="max-w-[110px] mb-5 lg:mb-20">
+        {{ section.settings.brand_name }}
+      </div>
+    </div>
+    <div>
+      {% if linklists.footer.links != blank %}
+        <ul class="flex flex-start mb-6 text-smtext-black hover:text-anarvin">
+          {% for link in linklists.footer.links %}
+            <li>
+              <a class="mr-4 hover:underline hover:underline-offset-8 md:mr-6" href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+
+    {% assign current_year = 'now' | date: '%Y' %}
+    <span class="block text-sm text-gray-500 text-center">All rights reserved {{ current_year }}
+      <a href="{{ shop.url }}" class="font-bold">{{ shop.name }}</a>
+    </span>
+  </div>
+</footer>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+      {
+        "type": "text",
+        "id": "brand_name",
+        "label": "Brand",
+        "default": "Bags 2 Go",
+        "info": "This is the brand title on the footer section"
+      }
+    ]
+  }
+{% endschema %}
