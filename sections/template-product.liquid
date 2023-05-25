@@ -17,27 +17,29 @@
       </div>
       <div class="md:block h-50">
         <!-- Swiper -->
-        <div class="swiper-wrapper">
-          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-            <div class="swiper-wrapper">
-              <div class="swiper">
-                <div class="swiper-wrapper">
-                  {% for media in product.media %}
-                    <div class="swiper-slide media-{{ forloop.index0 }}">
-                      {% render 'product-media', media: media %}
-                    </div>
-                  {% endfor %}
+        <slider-product-images id="slider-product-images">
+          <div class="swiper-wrapper">
+            <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+              <div class="swiper-wrapper">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    {% for media in product.media %}
+                      <div class="swiper-slide media-{{ forloop.index0 }}">
+                        {% render 'product-media', media: media %}
+                      </div>
+                    {% endfor %}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="bg-gray-700 bg-opacity-5 swiper-button-prev slider-button hn-slider-button slider-button--prev">
-              <div class="swiper-caret"></div>
-            </div>
-            <div class="bg-gray-700 bg-opacity-5 swiper-button-next slider-button hn-slider-button slider-button--next">
-              <div class="swiper-caret"></div>
+              <div class="bg-gray-700 bg-opacity-5 swiper-button-prev slider-button hn-slider-button slider-button--prev">
+                <div class="swiper-caret"></div>
+              </div>
+              <div class="bg-gray-700 bg-opacity-5 swiper-button-next slider-button hn-slider-button slider-button--next">
+                <div class="swiper-caret"></div>
+              </div>
             </div>
           </div>
-        </div>
+        </slider-product-images>
 
       </div>
     </div>
