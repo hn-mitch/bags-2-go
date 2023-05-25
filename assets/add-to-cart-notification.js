@@ -12,7 +12,6 @@ class CartNotification extends HTMLElement {
 
     async addToCart(e){
         e.preventDefault();
-        console.log('test');
         let addToCartForm = document.querySelector("#product-form");
         let formData = new FormData(addToCartForm);
 
@@ -22,7 +21,6 @@ class CartNotification extends HTMLElement {
           })
           .then((response) => response.text())
           .then((responseData) => {
-            // console.log(JSON.parse(data));
             const data = JSON.parse(responseData);
             console.log(data);
             this.renderProductInfo(data);
