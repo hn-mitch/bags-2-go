@@ -10,8 +10,7 @@
     {{ content_for_header }}
     {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
     {{ 'theme.css' | asset_url | stylesheet_tag }}
-
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css">
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
@@ -25,11 +24,22 @@
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"
       defer="defer"></script>
-
-
-    <script src="{{ 'variant-selector.js' | asset_url }}" defer></script>
-    <script src="{{ 'cart-notification.js' | asset_url }}" defer></script>
-    <script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer></script>
+    <script
+      type="text/javascript"
+      src="{{ 'variant-selector.js' | asset_url }}"
+      defer></script>
+    <script
+      type="text/javascript"
+      src="{{ 'cart-notification.js' | asset_url }}"
+      defer></script>
+    <script
+      type="text/javascript"
+      src="{{ 'swiper-bundle.min.js' | asset_url }}"
+      defer></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"
+      defer></script>
     <style>
       [x-cloak] {
         display: none !important;
@@ -39,6 +49,7 @@
   <body>
     {% section 'header' %}
     <main role="main">
+      {% render 'cart-notification' %}
       {{ content_for_layout }}
       {% comment %} {% section 'footer' %} {% endcomment %}
     </main>

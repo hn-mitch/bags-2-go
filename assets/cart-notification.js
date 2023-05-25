@@ -9,4 +9,4 @@ class CartNotification extends HTMLElement {
   
 }
 
-customElements.define("cart-notification", AddToCartButton);
+customElements.define("cart-notification", CartNotification);
