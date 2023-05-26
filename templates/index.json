@@ -1,24 +1,26 @@
 {
   "sections": {
     "hero-banner": {
-      "type": "hero-banner",
-      "settings": {
-        "title": "Got ya Stuff?",
-        "subtitle": "It’s all about you and style",
-        "button_label": "Shop now",
-        "button_link": ""
+        "type": "hero-banner",
+        "settings": {
+          "title": "Got ya Stuff?",
+          "subtitle": "It’s all about you and style",
+          "button_label": "Shop now",
+          "button_link": ""
+        }
+      },
+      "featured-collection": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured Collection",
+          "featured_collection": "frontpage",
+          "number_of_products_to_show": 8
+        }
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "featured_collection": "frontpage",
-        "number_of_products_to_show": 8
-      }
-  },
-  "order": [
-    "hero-banner",
+  "order": [ 
+    "hero-banner", 
     "featured-collection"
-  ]
+  ] 
 }
+
